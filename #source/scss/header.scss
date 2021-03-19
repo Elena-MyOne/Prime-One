@@ -1,0 +1,233 @@
+@mixin flexbox() {display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex;display: flex; font-size: 0;}
+//GRID
+$mw: 880px;
+$md1:$mw+12;
+$md2:992.98;
+$md3:767.98;
+$md4:479.98;
+//=============================================================
+header{
+	padding: 29px 0px 33px 0px; 
+	background-color: #fff;
+	@media (max-width: $md2+px){
+		max-width: 880px;
+	}
+	@media (max-width: $md3+px){
+		padding: 20px 0px 20px 0px;
+	}
+}
+//=============================================================
+
+.header-top {
+	@include flexbox();
+	justify-content: space-between;
+}
+
+.header-top-lang {
+	@include flexbox();
+	&__item {
+		display: block;
+		line-height: 19px;
+		color: #000;
+		font-size: 10px;
+		text-transform: uppercase;
+		font-family: Bebas;
+		letter-spacing: 1px;
+		padding: 0px 4px;
+		margin-right: 10px;
+		&:hover{
+		background-color: #000;
+			color: #fff;
+		}
+		&.active{
+			background-color: #000;
+			color: #fff;
+		}
+	}
+	@media (max-width: $md3+px){
+		display: none;
+	}
+}
+
+.header-top__ordering {
+	color: #000;
+	font-family: 'akzidenzgroteskbq-bdcnd-opentype';
+	font-size: 15px;
+	font-weight: 400;
+	text-transform: uppercase;
+	text-decoration: underline;
+	&:hover{
+		text-decoration: none;
+	}
+	&:visited{
+		color: #6E6E6E;
+	}
+	&:active{
+		color: #2C2C2C;
+	}
+	@media (max-width: $md4+px){
+		font-size: 13px;
+	}
+}
+
+.header-bottom {
+	margin-top: -20px;
+	@include flexbox();
+	align-items: center;
+	&__column {
+		flex: 0 0 33.333%;
+	}
+}
+
+.header-bottom-menu {
+	&__right{
+		.header-bottom-menu-list{
+			margin: 0px;
+			@include flexbox();
+			justify-content: flex-end;
+			text-align: right;
+			li{
+				margin: 0px 0px 0px 45px!important; 
+				&:first-child{margin: 0;}
+				@media (max-width: $md2+px) {
+					margin: 0px 0px 0px 20px!important;
+				}
+			}
+		}
+	}
+	&__link {
+	color: #000;
+	font-family: 'akzidenzgroteskbq-bdcnd-opentype';
+	font-size: 15px;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	&:hover{
+		text-decoration: underline;
+	}
+	&:active{
+		color: #2C2C2C;
+	}
+	}
+}
+
+.header-bottom-menu-list {
+	@include flexbox();
+	li{
+		margin: 0px 45px 0px 0px;
+		&:last-child{
+			margin: 0px 0px 0px 0px;
+			@media (max-width: $md3+px){
+				margin: 0px 20px 0px 0px;
+			}
+		}
+		@media (max-width: $md2+px) {
+			margin: 0px 20px 0px 0px;
+		}
+		@media (max-width: $md3+px){
+			display: none;
+		}
+	}
+}
+
+.header-logo {
+	display: block;
+	text-align: center;
+	&:hover{
+			opacity: 0.5;
+			}
+	span img {
+		@media (max-width: $md3+px){
+		width: 100px;
+		margin-left: 20px;
+		}
+	}
+	&__text {
+		display: block;
+		color: #000000;
+		font-family: Bebas;
+		font-size: 10px;
+		text-transform: uppercase;
+		letter-spacing: 8px;
+		@media (max-width: $md3+px){
+			font-size: 8px;
+			margin-left: 20px;
+			letter-spacing: 5px;
+		}
+	}
+	&__image {
+		display: inline-block;
+		margin: 13px 0px 22px 0px;
+		@media (max-width: $md3+px){
+			margin: 5px 0px 7px 0px;
+		}
+	}
+}
+
+.close,
+.open {
+	font-size: 20px;
+	display: none;
+	position: absolute;
+	right: 30px;
+	top: 15px;
+	@media (max-width: $md3+px){
+		display: block;
+	}
+	@media (max-width: $md4+px){
+		position: absolute;
+		right: 20px;
+		top: 15px;
+	}
+}
+
+#switcher{
+	position: absolute;
+	left: -999999px;
+	visibility: hidden;
+}
+
+#switcher:checked ~ nav {
+	left: 0;
+}
+
+.header-burger-menu {
+	display: none;
+	@media (max-width: $md3+px) {
+		overflow: auto;
+		padding-top: 15px;
+		display: block;
+		width: 100%;
+		height: 100vh;
+		position: fixed;
+		z-index: 10;
+		left: 100%;
+		top: 0;
+		transition: .5s;
+		background-color: #fff;
+	}
+}
+.header-burger-menu-list {
+	li{
+		padding: 15px 0px;
+		text-align: center;
+		@media (max-width: $md3+px) {
+			display: block;
+			height: 100%;
+			width: 100%;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			margin: 0px auto;
+		}
+		&:hover{
+			color:#ccc;
+		}
+	}
+}
+.header-burger-menu__link {
+	color: #000;
+	font-family: 'akzidenzgroteskbq-bdcnd-opentype';
+	font-size: 15px;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+}

@@ -1,0 +1,454 @@
+//GRID
+$mw: 880px;
+$md1:$mw+12;
+$md2:992.98;
+$md3:767.98;
+$md4:479.98;
+
+.wrapper{
+	@media (max-width: $md2+px){
+		max-width: 750px;
+	}
+	@media (max-width: $md3+px){
+		max-width: 100%;
+		padding: 0 10px;
+	}
+}
+.content {}
+
+.btn{
+	width: 155px;
+	height: 50px;
+	background-color: #000;
+	display: inline-block;
+	padding: 13px 27px;
+	font-size: 20px;
+	font-family: "Bebas";
+	text-transform: uppercase;
+	color: #fff;
+	letter-spacing: 1.5px;
+	&:hover{
+		background-color:  #6E6E6E;
+	}
+	@media (max-width: $md4+px){
+		width: 135px;
+		padding: 15px 20px;
+		font-size: 17px;
+	}
+	&--w{
+		background-color: #fff;
+		color: #000;
+	}
+}
+
+//BLOCK_1===================================
+.private {
+	@include flexbox();
+	background-color: #000;
+	margin-bottom: 75px;
+	@media (max-width: $md3+px){
+		margin-bottom: 50px;
+	}
+	@media (max-width: $md4+px){
+		margin-bottom: 40px;
+	}
+	&__column {
+		flex: 0 0 50%;
+		@media (max-width: $md3+px){
+			flex: 1 1 100%;
+		}
+		&:first-child{
+			@media (max-width: $md3+px){
+				display: none;
+				flex: 1 1 100%;
+			}
+		}
+	}
+	&__img {}
+}
+.private-body {
+	padding: 65px 0px 65px 60px;
+	@media (max-width: $md2+px){
+		padding: 30px 0px 30px 30px;
+	}
+	@media (max-width: $md3+px){
+			max-width: 100%;
+		}
+	&__title {
+		font-size: 50px;
+		text-transform: uppercase;
+		color: #fff;
+		font-family: 'akzidenzgroteskbq-bdcnd-opentype';
+		line-height: 50px;
+		letter-spacing: 5px;
+		@media (max-width: $md2+px){
+			font-size: 30px;
+			line-height: 25px;
+		}
+		@media (max-width: $md4+px){
+			font-size: 20px;
+			line-height: 15px;
+			letter-spacing: 3px;
+		}
+	}
+	&__text {
+		color: #fff;
+		font-family: "PT Sans";
+		font-size: 15px;
+		line-height: 25px;
+		margin: 30px 0px 50px 0px;
+		@media (max-width: $md2+px){
+			margin: 20px 0px 27px 0px;
+		}
+		@media (max-width: $md3+px){
+			margin: 20px 20px 20px 0px;
+			font-size: 14px;
+			line-height: 17px;}
+	}
+}
+
+.private-body-content{
+	max-width: 305px;
+	@media (max-width: $md3+px){
+		min-width: 100%;
+	}
+}
+
+.private-body-buttons {
+	@include flexbox();
+	align-items: center;
+	&__item {}
+	&__link {color: #fff;
+		font-family: "Bebas";
+		font-size: 17px;
+		text-decoration: underline;
+		text-transform: uppercase;
+		letter-spacing: 1.5px;
+		margin: 0px 0px 0px 15px;
+		@media (max-width: $md4+px){
+			font-size: 17px;
+		}
+	}
+}
+
+//BLOCK_2===================================
+
+.products {
+	margin: 0px 0px 40px 0px;
+	@media (max-width: $md3+px){
+		margin: 0;
+	}
+	&__column {
+		flex: 0 0 25%;
+		margin: 0px 0px 40px 0px;
+		@media (max-width: $md3+px){
+			flex: 0 0 50%;
+		}
+		@media (max-width: 380px){
+			flex: 1 1 100%;
+		}
+	}
+}
+.products-body {
+	@include flexbox();
+	@media (max-width: $md3+px){
+		flex-wrap: wrap;
+	}
+}
+.products-item {
+	@include flexbox();
+	flex-direction: column;
+	height: 100%;
+	&__image {
+		display: block;
+		margin: 0px 0px 25px 0px;
+	}
+	&__title {
+	height: 50px;
+	max-width: 125px;
+	overflow: hidden;
+	color: #000000;
+	font-family: 'akzidenzgroteskbq-bdcnd-opentype';
+	font-size: 25px;
+	line-height: 25px;
+	text-transform: uppercase;
+	letter-spacing: 2.5px;
+	&:hover{
+		text-decoration: underline;
+	}
+	@media (max-width: 380px){
+		max-width: none;
+		height: auto;
+		overflow: visible;
+	}
+	}
+	&__text {
+		flex: 1 1 auto;
+		margin: 36px 30px 0px 0px;
+		color: #000000;
+		font-family: "PT Sans";
+		font-size: 15px;
+		line-height: 25px;
+		@media (max-width: 380px){
+			margin: 20px 20px 0px 0px;
+		}
+	}
+	&__btn {
+		margin: 32px 0px 0px 0px;
+		@media (max-width: 380px){
+			margin: 20px 0px 0px 0px;
+		}
+	}
+	&__link {
+		display: inline-block;
+		margin: 29px 0px 0px 1px;
+		color: #000000;
+		font-family: "Bebas";
+		font-size: 17px;
+		line-height: 25px;
+		text-decoration: underline;
+		text-transform: uppercase;
+		letter-spacing: 1.5px;
+		@media (max-width: 380px){
+			margin: 20px 0px 0px 1px;
+		}
+	}
+}
+
+//BLOCK_3===================================
+.why {}
+.why-top {
+	@include flexbox();
+	background-color: #000;
+	@media (max-width: 650px){max-width: 100%;}
+	&__column {
+		flex: 0 0 50%;
+		@media (max-width: 650px){
+			flex: 1 1 100%;
+		}
+		&:last-child{
+			@media (max-width: 650px){
+				display: none;
+				flex: 1 1 100%;
+			}
+		}
+	}
+	&__text {
+		color: #ffffff;
+		text-align: right;
+		font-family: 'akzidenzgroteskbq-bdcnd-opentype';
+		font-size: 50px;
+		line-height: 25px;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+		padding: 56px 60px 56px 0px;
+		@media (max-width: $md2+px){
+			font-size: 35px;
+			padding: 25px 20px 20px 0px;
+		}
+		@media (max-width: 650px){
+			padding: 25px 0px 20px 0px;
+			text-align: center;
+		}
+		@media (max-width: $md4+px){
+			font-size: 20px;
+		}
+	}
+	&__image {
+		@media (max-width: 650px){
+			display: none;
+		}
+	}
+}
+.why-body {
+	background-color: #ebebeb;
+	padding: 50px 0px 0px 0px;
+	@media (max-width: 650px){
+			padding: 30px 0px 0px 0px;
+		}
+	&__column {
+		flex: 0 0 50%;
+		margin: 0px 0px 50px 0px;
+		@media (max-width: 650px){
+			margin: 0px 0px 35px 0px;
+			flex: 1 1 100%;
+			&:last-child{
+				margin: 0px 0px 20px 0px;
+			}
+		}
+	}
+}
+.why-body-row{
+	@include flexbox();
+	flex-wrap: wrap;
+}
+.why-body-item {
+	@include flexbox();
+	&__icon {
+		flex: 0 0 100px;
+		height: 100px;
+		background-color: #000;
+		@media (max-width: $md4+px){
+			flex: 0 0 80px;
+			height: 80px;
+			img{min-width: 100%;}
+		}
+	}
+}
+.why-body-item-body {
+	flex: 1 1 100%;
+	@include flexbox();
+	flex-direction: column;
+	padding: 0px 0px 0px 11px;
+	&__title {
+		flex: 1 1 auto;
+		color: #000000;
+		font-family: 'akzidenzgroteskbq-bdcnd-opentype';
+		font-size: 25px;
+		line-height: 25px;
+		text-transform: uppercase;
+		letter-spacing: 2.5px;
+		@media (max-width: $md4+px){
+			font-size: 20px;
+		}
+	}
+	&__text {
+		color: #000000;
+		font-family: "PT Sans";
+		font-size: 15px;
+		line-height: 25px;
+		padding: 0px 20px 0px 0px;
+	}
+}
+
+//BLOCK_4===================================
+.contacts {
+	padding: 80px 0px 0px 0px;
+	@media (max-width: $md3+px){
+		padding: 50px 0px 0px 0px;
+	}
+	@media (max-width: $md4+px){
+		padding: 30px 0px 0px 0px;
+	}
+
+}
+.contacts-top {}
+.contacts-title {
+	font-family: 'akzidenzgroteskbq-bdcnd-opentype';
+	font-size: 50px;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	margin: 0px 0px 30px 0px;
+}
+.contacts-body {
+	@include flexbox();
+	flex-wrap: wrap;
+	&__column {
+		flex: 0 0 50%;
+		margin: 0px 0px 20px 0px;
+		@media (max-width: $md4+px){
+			flex: 1 1 100%;
+		}
+	}
+	&__item {
+		font-size: 15px;
+		color: #000;
+		display: inline-block;
+		line-height: 27px;
+		padding: 0px 0px 0px 35px;
+	}
+	&__item--1 {
+		background: url('../img/block_4/1.jpg') left no-repeat;
+	}
+	&__item--2 {
+		background: url('../img/block_4/2.jpg') left no-repeat;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+	&__item--3 {
+		background: url('../img/block_4/3.jpg') left no-repeat;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+}
+.contacts-social {
+	@include flexbox();
+	&__item {
+		margin: 0px 30px 0px 0px;
+		&:hover{
+			opacity: 0.5;
+		}
+		&:last-child{margin: 0px 0px 0px 0px;}
+	}
+}
+.contacts-content {
+	@include flexbox();
+	background-color: #000;
+	&__column {
+		flex: 0 0 50%;
+		@media (max-width: $md3+px){
+			flex: 1 1 100%;
+			&:first-child{
+				display: none;
+				flex: 1 1 100%;
+			}
+		}
+	}
+	&__map {
+		height: 100%!important;
+		@media (max-width: $md3+px){
+			display: none;
+		}
+	}
+}
+.contacts-content-form {
+	padding: 55px 60px;
+	@media (max-width: $md4+px){
+		padding: 20px 20px;
+	}
+	&__title {
+		color: #ffffff;
+		font-family: 'akzidenzgroteskbq-bdcnd-opentype';
+		font-size: 25px;
+		text-transform: uppercase;
+		letter-spacing: 2.5px;
+		margin: 0px 0px 25px 0px;
+	}
+}
+.contacts-content-form-body {
+	max-width: 374px !important;
+}
+.contacts-content-form-line {
+	margin: 0px 0px 25px 0px;
+}
+.input {
+	height: 50px;
+	border: 2px solid #959595;
+	background-color: #252525;
+	padding: 0px 18px;
+	color: #959595;
+	font-size: 17px;
+	&:hover{
+		border: 2px solid #fff;
+	}
+	@media (max-width: $md4+px){
+		padding: 5px 10px !important;
+		height: 40px;
+	}
+}
+textarea.input{
+	height: 100px;
+	padding: 10px 18px !important;
+	@media (max-width: $md4+px){
+		padding: 5px 10px !important;
+	}
+}
+.contacts-content-form__btn {
+	padding: 15px 26px 18px 22px;
+	font-size: 17px;
+	@media (max-width: $md4+px){
+		padding: 10px 16px 10px 16px;
+	}
+}
